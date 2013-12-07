@@ -31,6 +31,20 @@ endproc
 ```
 
 
+Basic Functions
+---------
+
+```
+`length("internationalization")
+# 20
+
+## index of first occurence of substring: 
+index("internationalization", "ation")  
+# 7
+index ("internationalization", "x")
+# 0
+```
+
 
 Etc.
 ----
