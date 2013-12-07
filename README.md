@@ -35,10 +35,11 @@ Basic Functions
 ---------
 
 ```
-`length("internationalization")
+length("internationalization")
 # 20
 
 ## index of first occurence of substring: 
+
 index("internationalization", "ation")  
 # 7
 index ("internationalization", "x")
