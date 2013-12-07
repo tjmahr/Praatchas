@@ -19,7 +19,7 @@ procedure listSpeaker(.name$, .age)
 endproc
 ```
 
-> [Manual](http://www.fon.hum.uva.nl/praat/manual/Scripting_5_5__Procedures.html): The Praat scripting language does not have the concept of a "function" like some other scripting languages do. A function is a procedure that returns a number or a string. For instance, you can imagine the function squareNumber which takes a number (e.g. 5) as an argument and returns the square of that number (e.g. 25). Here is an example of how you can do that, using the global availability of local variables:
+Procedures are not functions; they do not return values. But you can access the local variables inside of a procedure to "return" a value from the last invocation of that procedure. 
 
 ```
 @squareNumber(5)
@@ -30,7 +30,12 @@ procedure squareNumber(.number)
 endproc
 ```
 
-[`writeInfoLine` is the new `echo`.](http://www.fon.hum.uva.nl/praat/manual/Scripting_9_2__Old_functions.html)
+
+
+Etc.
+----
+
+`writeInfoLine` is [the new](http://www.fon.hum.uva.nl/praat/manual/Scripting_9_2__Old_functions.html) `echo`.
 
 ```
 echo Hello, my name is 'name$' and I am 'age' years old.
