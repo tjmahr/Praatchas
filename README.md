@@ -31,15 +31,33 @@ endproc
 ```
 
 
-Basic Functions
----------
+Some Basics
+-----------
+
+### Info logging
+
+* `writeInfo`
+* `writeInfoLine`
+* `appendInfo`
+* `appendInfoLine`
+* `clearinfo`
+
+The commands starting with `write` clear the info log first. The commands ending with `Line` include an implicit  `newline$` (a special string constant like `tab$`). Technically, then, `writeInfoLine("hello")` is equivalent to `clearinfo; appendInfo("hello", newline$)`.
+
+`writeInfoLine` is [the new](http://www.fon.hum.uva.nl/praat/manual/Scripting_9_2__Old_functions.html) `echo`. Don't use `echo`, `print` or `printline` anymore, I guess.
+
+```
+echo Hello, my name is 'name$' and I am 'age' years old.
+writeInfoLine ("Hello, my name is ", name$, " and I am ", age, " years old.")
+```
+
+### Strings
 
 ```
 length("internationalization")
 # 20
 
 ## index of first occurence of substring: 
-
 index("internationalization", "ation")  
 # 7
 index ("internationalization", "x")
@@ -47,12 +65,5 @@ index ("internationalization", "x")
 ```
 
 
-Etc.
-----
 
-`writeInfoLine` is [the new](http://www.fon.hum.uva.nl/praat/manual/Scripting_9_2__Old_functions.html) `echo`.
 
-```
-echo Hello, my name is 'name$' and I am 'age' years old.
-writeInfoLine ("Hello, my name is ", name$, " and I am ", age, " years old.")
-```
