@@ -30,6 +30,47 @@ procedure squareNumber(.number)
 endproc
 ```
 
+Forms
+-----
+
+### Simple Fields
+
+Forms allow us to capture user input into variables for scripting. Here is the basic template for such a menu, where a user inputs values into fields.
+
+```
+form [Window Title]
+    [Input Type] [Field_Description] [Default Value To Display]
+    [Input Type] [Field_Description_Two] [Default Value To Display]
+    # et cetera...
+endform
+```
+
+Some gotchas to note already. The `[Field_Description]` is pretty-printed next to the input box as text with the underscores turned into spaces. The field description also serves as a variable name for the inputted value. You may want your the field description to start with a capital letter because that's how you like to write things. But **variable names in Praat cannot start with uppercase letters**. Or you may want to indicate a unit of measure in parentheses in the field description, but parentheses are also not allowed in variable names. Therefore, some care is required when determining the variable name that goes with a field description. Examples:
+
+```
+form Sink it
+    sentence Name_of_the_ship Titanic
+    real Distance_to_the_iceberg_(m) 500.0
+endform
+
+writeInfoLine(Name_of_the_ship$)
+# Error: No such error (note: variables start with lower case)
+
+writeInfoLine(name_of_the_ship$)
+# "Titantic"
+
+appendInfoLine(distance_to_the_iceberg_(m))
+# Error: Unknown function <<distance_to_the_iceberg_>> in formula
+
+appendInfoLine(distance_to_the_iceberg_)
+# Error: Unknown variable
+
+appendInfoLine(distance_to_the_iceberg)
+# 500
+```
+
+
+
 
 Some Basics
 -----------
