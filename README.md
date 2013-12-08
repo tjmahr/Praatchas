@@ -3,8 +3,6 @@ Praatchas: Praat Gotchas
 
 _An ongoing repository to help me remember some things about Praat scripting_
 
-***
-
 Procedures
 ----------
 
