@@ -3,6 +3,24 @@ Praatchas: Praat Gotchas
 
 _An ongoing repository to help me remember some things about Praat scripting_
 
+Whitespace
+----------
+
+Final whitespace can matter. In the example below, `·` represents a hidden space at the end of the line. We can guard against this gotcha by using `selectObject` and enclosing the object name in quotes.
+
+```
+select Sound Sound1
+# Works
+
+select Sound Sound1·
+# Error: No object with that name. Object "Sound Sound1 " does not exist.
+
+selectObject("Sound Sound1")
+# Works
+```
+
+
+
 Procedures
 ----------
 
@@ -102,6 +120,33 @@ index("internationalization", "ation")
 index ("internationalization", "x")
 # 0
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
