@@ -121,7 +121,18 @@ index ("internationalization", "x")
 # 0
 ```
 
+#### Concatentation and Truncation
 
+```
+text$ = "hallo" + "dag"
+appendInfoLine(text$)
+# hallodag
+
+sound_name$ = "hallo.aifc"
+textgrid_name$ = sound_name$ - ".aifc" + ".TextGrid"
+appendInfoLine(textgrid_name$)
+# hallo.TextGrid
+```
 
 
 
