@@ -137,8 +137,16 @@ appendInfoLine(textgrid_name$)
 
 
 
+Control
+-------
 
+### Inline conditionals
 
+```
+.ext$ = if (macintosh or unix) then "WAV" else "wav" endif
+appendInfoLine(.ext$)
+# "wav" on a Windows computer
+```
 
 
 
