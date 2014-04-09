@@ -134,8 +134,29 @@ appendInfoLine(textgrid_name$)
 # hallo.TextGrid
 ```
 
+#### Interpolation
 
+Praat supports [string interpolation](http://en.wikipedia.org/wiki/String_interpolation) where the value of a variable can be inserted into a string. For example, if `file_ext$ = ".wav"` then `"my_recording.'file_ext$'"` evaluates as `my_recording.wav`. Personally, I prefer concatenation over interpolation---i.e., writing something like `"my_recording" + file_ext$`---because it more clearly reveals how a string is constructed from strings and variables. However, numeric variables need to be coerced into strings with `string$(...)` in order for string concatenation to work.
 
+The example below shows both techniques.
+
+```
+procedure make_id(.task$, .id_num$, .age)
+	# Interpolation
+	.id$ = "'.task$'_'.id_num$'_'.age'"
+	# Concatenation. The numeric variable has to be converted to a string
+	.alt_id$ = .task$ + "_" + .id_num$ + "_" + string$(.age)
+endproc
+
+@make_id("Listening", "001", 32)
+
+appendInfoLine(make_id.id$)
+# Listening_001_32
+
+appendInfoLine(make_id.alt_id$)
+# Listening_001_32
+
+```
 
 Control
 -------
